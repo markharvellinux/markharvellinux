@@ -1,0 +1,367 @@
+body {
+    margin: 0;
+    background-color: #dffab0;
+}
+
+/************* Header ***********/
+nav {
+    width: 100%;
+    position: relative;
+    min-height: 100px;
+    max-height: 200px;
+    overflow: hidden;
+}
+
+nav img {
+    width: 15%;
+    height: 100%;
+    margin: 5px 10px;
+    border: 2px solid #556b2f;
+    border-radius: 10px;
+    animation: slide-left 2s backwards;
+}
+
+nav .brand {
+    display: inline;
+    position: absolute;
+    width: 80%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    top: 10%;
+}
+
+nav h1 {
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: olive;
+    animation: down 2s forwards infinite;
+}
+
+nav p {
+    animation: up 2s forwards infinite;
+}
+
+@keyframes slide-left {
+    from {transform: translateX(-600px);}
+    to {transform: translateX(0);}
+}
+
+@keyframes down {
+    from {transform: translateY(0px);}
+    to {transform: translateY(50px);}
+}
+
+@keyframes up {
+    from {transform: translateY(0px);}
+    to {transform: translateY(-50px);}    
+}
+
+
+/********** Slideshow ************/
+.ss-super {
+    width: 90%;
+    height: 50px;
+    text-align: center;
+    margin: 0 5%;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+#ssOne {
+    background-color: rgb(252, 237, 124);
+}
+#ssTwo {
+    background-color: rgb(236, 154, 125);
+}
+#ssThree {
+    background-color: rgb(90, 214, 90);
+}
+#ssFour {
+    background-color: rgb(62, 202, 202);
+}
+
+.ss-container {
+    width: 400%;
+    height: 100%;
+    animation: slideshow 8s ease infinite;
+}
+
+.ss-container div {
+    width: 25%;
+    height: 100%;
+    float: left;
+    font-size: small;
+    padding-top: 10px;
+}
+
+.ss-container span {
+    font-weight: bold;
+    font-size: large;
+}
+
+@keyframes slideshow {
+    0% {margin-left: 0%;}
+    25% {margin-left: -100%;}
+    50% {margin-left: -200%;}
+    75% {margin-left: -300%;}
+    100% {margin-left: 0%;}
+}
+
+/********** Banner ************/
+.banner {
+    width: 90%;
+    height: auto;
+    margin: 0px 5%;
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+}
+
+.banner div {
+    position: absolute;
+    background-color: darkgray;
+    border: 3px solid white;
+    width: 40%;
+    height: auto;
+    top: 40%;
+    left: 10%;
+    padding: 15px;
+}
+@media (max-width:460px) {
+    .banner div {
+        font-size: small;
+        top: 20%;
+        height: 60%;
+        overflow: hidden;
+        overflow: scroll;
+    }
+}
+
+/********** Second Banner ************/
+.middle-banner {
+    display: flex;
+    width: 90%;
+    min-height: 100px;
+    margin: 50px 5%;   
+    position: relative;
+}
+
+.middle-banner img {
+    width: 40%;
+    min-height: 100px;
+    -webkit-filter: sepia(60%);
+    filter: sepia(69%);
+}
+
+.middle-banner .box-mid {
+    width: 40%;
+    min-height: 100px;
+    margin-left: 20%;
+    background-color: darkgrey;
+    color: #556b2f;
+}
+
+.middle-banner #hoverImg {
+    position: absolute;
+    padding: 15px;
+    border: 2px solid yellow;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    top: 15%;
+    left: 1.5%;
+    width: 30%;
+}
+
+/********** Lotions Section ************/
+.lotions {
+    display: flex;
+    width: 90%;
+    margin: 50px 5%;
+    height: auto;
+}
+
+.lotions div {
+    width: 33%;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.lotions img {
+    width: 100%;
+    height: auto;
+}
+
+.lotions h3 {
+    color: #b18d1a;
+}
+
+.lotions a {
+    display: block;
+    margin: 10px 0;
+    background-color: black;
+    width: 70%;
+    margin-left: 10%;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.lotions a:hover {
+    transform: scale(1.1);
+    background-color: #556b2f;
+}
+
+/********** Modal for Lotions Section ************/
+.my-modal {
+    position: fixed;
+    background-color: rgba(0, 99, 248, 0.3);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+
+.my-modal:target {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+}
+
+.my-modal-content {
+    background-color: white;
+    position: absolute;
+    overflow: hidden;
+    overflow-y: scroll;
+    width: 70%;
+    height: 500px;
+    top: 10%;
+    right: 15%;
+    margin: 20px;
+}
+
+.my-modal-body {
+    display: flex;
+    text-align: center;
+}
+
+.close-modal {
+    float: right;
+    background-color: lightgray;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.my-modal-content img {
+    width: 50%;
+    height: 40%;
+    margin: 20px;
+}
+
+.my-modal-footer {
+    background-color: rgb(202, 201, 201);
+}
+
+.my-modal-footer p {
+    margin: 10px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid white;
+}
+
+.my-modal-footer a {
+    background-color: black;
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 100px;
+    text-align: center;
+    margin: 10px 50px;
+    padding: 5px 10px;
+}
+
+.my-modal-footer a:hover {
+    transform: scale(1.1);
+    background-color: white;
+    color: black;
+}
+
+.md-b {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+}
+
+/********** Footer ************/
+footer {
+    width: 100%;
+    min-height: 300px;
+    overflow: hidden;
+    background-color: black;
+    color: rgb(199, 199, 199);
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    display: inline-block;
+    width: 20%;
+    height: 30%;
+    text-align: center;
+    overflow: hidden;
+}
+
+footer ul .li-1 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+footer .social {
+    text-align: end;
+    margin-top: 30px;
+    margin-right: 10px;
+}
+
+.social-logo {
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.social img {
+    width: 30px;
+    height: 30px;
+}
+
+footer p {
+    font-size: small;
+}
+
+footer span {
+    font-weight: bold;
+}
+
+hr {
+    border-top: 5px solid #556b2f;
+    margin: 0 20px;
+}
+
+.section-title {
+    margin: 20px;
+}
+
+footer hr {
+    border-bottom: 2px solid white;
+    border-top: 0;
+    margin: 40px;
+}
